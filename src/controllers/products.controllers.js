@@ -2,9 +2,9 @@ import { db } from "../database/database.connect.js";
 
 export async function getProducts(req, res){
     try {
-        const names=await db.getCollectionNames;
-        console.log(names);
-        return res.sendStatus(200);
+        const products=await db.collection('products').find().toArray();
+        // console.log(products);
+        return res.send(products);
     } catch (error) {
         console.log(error);
         return res.sendStatus(500);

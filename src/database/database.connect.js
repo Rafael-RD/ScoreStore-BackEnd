@@ -19,8 +19,8 @@ export const db = mongoClient.db();
 produts on database
 
 name: string
-genre: array
 price: number
 image: url
+genre: array
 description (if game page implemented): string
 */
