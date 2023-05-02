@@ -5,6 +5,6 @@ import { postOrder } from "../controllers/order.controllers.js";
 const productsRouter=Router();
 
 productsRouter.get('/products', getProducts);
-products.post('/cart', postOrder);
+productsRouter.post('/cart', postOrder);
 
 export default productsRouter;
