@@ -1,21 +1,23 @@
 
 import bcrypt from "bcrypt";
 import { registerSchema } from "../schemas/registerSchema.js";
-import { MongoClient } from "mongodb";
-import dotenv from "dotenv"
+// import { MongoClient } from "mongodb";
+// import dotenv from "dotenv"
 import { v4 as uuidv4 } from "uuid";
+import db from "../database/database.connect.js";
 
-dotenv.config();
+// dotenv.config();
 
 
-const mongoClient = new MongoClient(process.env.DATABASE_URL);
+// const mongoClient = new MongoClient(process.env.DATABASE_URL);
 
-try {
-    await mongoClient.connect();
-} catch (error) {
-    console.log(error);
-}
- const db = mongoClient.db();
+// try {
+//     await mongoClient.connect();
+// } catch (error) {
+//     console.log(error);
+// }
+//  const db = mongoClient.db();
+
 
 
 export async function signUp(req, res) {
@@ -116,7 +118,7 @@ export async function signUp(req, res) {
   
       }
   
-      return res.status(200).send(generateCode);
+      return res.status(200).send({token: generateCode, name: internalAnalysis.name});
   
     } catch (error) {
   
