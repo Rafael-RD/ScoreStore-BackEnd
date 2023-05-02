@@ -1,16 +1,18 @@
-import { MongoClient } from "mongodb";
-import dotenv from "dotenv"
+// import { MongoClient } from "mongodb";
+// import dotenv from "dotenv"
 
-dotenv.config();
+import db from "../database/database.connect.js"
 
-const mongoClient = new MongoClient(process.env.DATABASE_URL);
+// dotenv.config();
 
-try {
-    await mongoClient.connect();
-    console.log('Database Connected');
-} catch (error) {
-    console.log(error);
-}
+// const mongoClient = new MongoClient(process.env.DATABASE_URL);
+
+// try {
+//     await mongoClient.connect();
+//     console.log('Database Connected');
+// } catch (error) {
+//     console.log(error);
+// }
 
 
 export async function members (req, res) {

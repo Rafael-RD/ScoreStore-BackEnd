@@ -1,4 +1,4 @@
-import { db } from "../database/database.connect.js";
+import db from "../database/database.connect.js";
 
 export async function getProducts(req, res){
     try {
